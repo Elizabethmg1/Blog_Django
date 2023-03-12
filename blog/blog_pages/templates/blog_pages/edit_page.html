@@ -1,0 +1,31 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Editar Pagina:</h1>
+<!-- Aqui va lo que cambia y lo asociado a esta vista -->
+{% if miFormulario.errors %}
+
+<p style="color: red;"> Estan mal los datos, revisar</p>
+
+{% endif %}
+
+<form method="POST">{% csrf_token %}
+
+    <!-- Aca esta la magia de Django -->
+
+    <table>
+
+        {{miFormulario.as_table}}
+
+    </table>
+
+    <button type="submit">Guardar</button>
+
+</form>
+
+<a href='{% url "blog_pages:leerpaginas" %}' class="button">Volver</a>
+
+
+{% endblock %}

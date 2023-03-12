@@ -1,0 +1,29 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<br>
+<br>
+<br>
+<br>
+<nav class="navbar navbar-light bg-light static-top">
+  <div class="container">
+      <a class="navbar-brand" href="{% url 'blog_pages:leerpaginas' %}">Ver Paginas</a>
+      <a class="navbar-brand" href="{% url 'blog_pages:acerca_de_mi' %}">Acerca de mi</a>
+      <a class="navbar-brand" href="{% url 'perfiles:perfil' %}">Ver mi perfil</a>
+      <a class="navbar-brand" href="{% url 'login:logout' %}">Logout</a>
+  </div>
+</nav>
+<h1 class="visually-hidden">Blog</h1>
+
+<div class="px-4 py-5 my-5 text-center">
+  <!-- <h1 class="display-5 fw-bold">Bienvenido al blog</h1> -->
+  <h1 class="display-5 fw-bold">{{mensaje}}</h1>
+  <div class="col-lg-6 mx-auto">
+    <h1 class="lead mb-4">Blog de contenido de recetas</h1>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    </div>
+  </div>
+</div>
+{% endblock %}

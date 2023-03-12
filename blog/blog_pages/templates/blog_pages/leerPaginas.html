@@ -1,0 +1,27 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<a href="{% url 'blog_pages:create_page' %}">Crear Pagina</a>
+{% for p in pages %}
+<h1 class="visually-hidden">Blog</h1>
+
+<div class="px-4 py-5 my-5 text-center">
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">{{p.title}}</p></br>
+</br><a href='{% url "blog_pages:leer_mas" p.pk %}' class="button">Leer Mas</a>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    </div>
+  </div>
+</div>
+<button>
+  <a href="{% url 'blog_pages:edit_page' p.title %}">Editar</a>
+</button><br>
+<button>
+  <a href="{% url 'blog_pages:delete_page' p.title %}">Eliminar</a>
+</button>
+<div class="b-example-divider"></div>
+{% endfor %}
+</br><a href='{% url "blog_pages:inicio" %}' class="button">Volver</a>
+{% endblock %}

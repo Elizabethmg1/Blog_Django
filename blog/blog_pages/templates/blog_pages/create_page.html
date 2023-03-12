@@ -1,0 +1,22 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Crear Pagina:</h1>
+<!-- Aqui va lo que cambia y lo asociado a esta vista -->
+
+<form action="" method="POST">{% csrf_token %}
+
+    <table>
+        {{my_page.as_table}}
+    </table>
+
+    <input type="submit" value="Enviar">
+
+</form>
+
+<a href='{% url "blog_pages:leerpaginas" %}' class="button">Volver</a>
+
+
+{% endblock %}

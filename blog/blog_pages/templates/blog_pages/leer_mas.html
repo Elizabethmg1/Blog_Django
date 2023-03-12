@@ -1,0 +1,23 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+
+<h1 class="visually-hidden">Blog</h1>
+
+<div class="px-4 py-5 my-5 text-center">
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">{{page.title}}</p></br>
+    <p class="lead mb-4">{{page.subtitle}}</p></br>
+    <p class="lead mb-4">{{page.body}}</p></br>
+    <p class="lead mb-4">{{page.author}}</p></br>
+    <p class="lead mb-4">{{page.date}}</p></br>
+    <p><img src="{{ page.image_url|default_if_none:'#' }}" alt=""></p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    </div>
+  </div>
+</div>
+<div class="b-example-divider"></div> </br>
+<a href='{% url "blog_pages:leerpaginas" %}' class="button">Volver</a>
+{% endblock %}

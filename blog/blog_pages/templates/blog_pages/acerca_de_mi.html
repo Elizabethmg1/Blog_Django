@@ -1,0 +1,15 @@
+{% extends "blog_pages/padre.html" %}
+
+{% load static %}
+
+{% block contenidoQueCambia %}
+<h1>Acerca de mi:</h1>
+<h2>Soy Micaela Elizabeth Gimenez</h2>
+<p>Vivo en Buenos Aires Argentina y me gusta programar</p><br>
+<p>Este blog trata de recetas, en el apartado "paginas" podras ver todas las recetas.</p>
+</br>
+
+<a href='{% url "blog_pages:inicio" %}' class="button">Volver</a>
+
+
+{% endblock %}
